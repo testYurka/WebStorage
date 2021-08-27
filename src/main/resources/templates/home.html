@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title th:text="Замовлення"> </title>
+  <title>Getting Started: Serving Web Content</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+<div>Список товарів</div>
+<div th:each="el : ${orders}">
+<p th:text="${el.item}">
+<p th:text="${el.quantity}">
+<p th:text="${el.price}">
+    </div>
+<div>    <form method="post" action="home">
+        <input type = "text" name = "item" placeholder="Назва товару">
+        <input type = "text" name = "quantity" placeholder="Кількість">
+ <button type="submit" value="send">Додати товар</button>
+    </form>
+</div>
+    <div>    <form method="post" action="finalOrder">
+         <button type="submit" value="send">Оформити замовлення</button>
+    </form>
+</div>
+</body>
+</html>
